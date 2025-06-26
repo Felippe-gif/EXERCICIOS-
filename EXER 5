@@ -1,0 +1,55 @@
+ENUNCIADO :
+Criar um programa que:
+Pergunte ao usuário quantos filmes deseja avaliar.
+Para cada filme:
+Peça o nome do filme.
+Peça uma nota de 0 a 10 com validação.
+Guarde os dados em listas.
+Ao final, mostre:
+Lista de filmes e notas.
+Média geral das notas.
+O filme com maior nota e o com menor nota.
+Quantos filmes foram:
+Excelentes (nota ≥ 9)
+Bons (7 ≤ nota < 9)
+Regulares (5 ≤ nota < 7)
+Ruins (nota < 5)
+
+filmes = []
+NOTA = []
+excelentes = 0
+bons = 0
+regulares = 0
+ruins = 0
+cont = 0
+num_filmes = int(input('digite quantos filmes quer avaliar:'))
+while cont < num_filmes:
+    cont += 1 
+    nome_filme =input('digite o nome do filme ?')
+    nota = float(input('digite a nota de 0 a 10 :'))
+
+    while nota < 0 or nota > 10:
+        print('Nota inválida! Digite entre 0 e 10.')
+        nota = float(input('Digite novamente: '))
+
+    filmes.append(f'NOME DO FILME: {nome_filme} E NOTA : {nota}')
+    NOTA.append(nota)
+
+    if nota >= 9:
+        exelentes += 1
+    elif nota >= 7 :
+        bons += 1
+    elif nota >= 5 :
+        regulares += 1
+    else :
+        ruins += 1
+print('\n--- RESULTADOS ---')
+media = sum(NOTA) / len(NOTA)
+print(f'\nMédia geral das notas: {media:.2f}')
+print(f'Maior nota: {max(NOTA)}')
+print(f'Menor nota: {min(NOTA)}')
+
+print(f'\nFilmes excelentes (≥9): {excelentes}')
+print(f'Filmes bons (7 a 8.9): {bons}')
+print(f'Filmes regulares (5 a 6.9): {regulares}')
+print(f'Filmes ruins (<5): {ruins}')
