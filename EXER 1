@@ -1,0 +1,38 @@
+ENUNCIADO :
+Criar um programa que:
+Peça ao usuário o número de alunos.
+Para cada aluno, leia três notas válidas (entre 0 e 10).
+Calcule a média de cada aluno.
+Classifique o aluno como:
+"Aprovado" se média ≥ 7
+"Exame" se 4 ≤ média < 7
+"Reprovado" se média < 4
+Mostre as médias e a classificação final usando funções.
+Exiba quantos alunos ficaram em cada categoria usando variáveis contadoras.
+
+cont = 0
+aprovado = 0
+reprovado = 0
+exame = 0
+num = int(input('digite quantas vezes quer ver a e media dos alunos :'))
+while cont < num:
+    aluno = str(input('ALUNO :'))
+    NOTA1 = float(input('NOTA 1 :'))
+    NOTA2 = float(input('NOTA 2 :'))
+    NOTA3 = float(input('NOTA 3 :'))
+    MEDIA = (NOTA1 + NOTA2 + NOTA3) / 3
+    cont += 1
+    if MEDIA >= 6:
+        print(f'MEDIA DE {aluno}: {MEDIA:.2f} - APROVADO ')
+        aprovado += 1
+    elif  MEDIA >= 4:
+        print(f'MEDIA DE {aluno}: {MEDIA:.2f} - EXAME  ')
+        exame += 1
+    else:
+        print(f'MEDIA DE {aluno}: {MEDIA:.2f} - REPROVADO ')
+        reprovado += 1
+
+print('resumo final:' )
+print(f'APROVADOS : {aprovado}')
+print(f'EXAME : {exame}')
+print(f'REPROVADOS : {reprovado}')
