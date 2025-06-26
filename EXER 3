@@ -1,0 +1,45 @@
+🛒 Exercício: Simulador de Compras com Limite de Crédito
+Crie um programa que simule um sistema simples de compras em uma loja virtual. O cliente pode inserir o nome de um produto e seu respectivo preço. As compras serão armazenadas em uma lista, respeitando as seguintes regras:
+Regras do sistema:
+O cliente tem um limite de crédito de R$2000,00.
+O usuário deve informar o nome do produto e o preço.
+Se o preço do produto for maior que R$2000,00, a compra deve ser recusada.
+Se o preço for negativo, o programa deve encerrar imediatamente.
+Cada compra aprovada deve ser adicionada a duas listas: uma para os nomes dos produtos e outra para os preços.
+Após cada compra, pergunte ao usuário se deseja continuar (sim ou nao).
+O programa deve encerrar se o usuário digitar nao ou atingir o limite de crédito.
+Ao final, exiba:
+A lista de produtos comprados;
+O valor total gasto;
+O crédito restante.
+
+def simular_loja(preço,nome):
+
+    carrinho = []
+    compra = []
+    while True:
+        nome = str(input('Digite nome do produto :'))
+        preço = float(input('Digite o preço da compra:'))
+
+        if preço < 0 :
+            break
+        if preço <= 2000:
+            print("Sua compra foi aprovada !!!!")
+            carrinho.append(nome)
+            compra.append(preço)
+            credito_restante = sum(compra) - 2000
+        else:
+            print('Sua compra foi recusada!!')
+            break
+        resul = str(input('deseja continuar a compra (sim ou nao): '))
+        if resul == 'sim' or resul == 'Sim':
+            continue
+        elif resul == 'nao' or resul == 'Nao':
+            break
+        print(f'lista de itens comprados : {carrinho}') 
+        print(f'total gasto : {sum(compra):.2f}')
+        print(f'credito restante:  {credito_restante:.2f}')
+        return
+nome1 = str 
+preço1 = float
+resultado = simular_loja(nome1,preço1)
