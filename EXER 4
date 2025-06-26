@@ -1,0 +1,47 @@
+ENUNCIADO :
+🎯 Objetivo:
+Criar um programa que:
+Peça ao usuário quantas pessoas deseja cadastrar.
+Para cada pessoa:
+Leia a idade (somente valores entre 0 e 130 são válidos).
+Classifique como:
+Criança (< 12)
+Adolescente (12 a 17)
+Adulto (18 a 59)
+Idoso (60 ou mais)
+
+cont = 0
+criança = []
+adulto = []
+jovem = []
+idoso = []
+num_cadastro = int(input('Digite quantas pessoas vao cadastrar:'))
+while cont < num_cadastro:
+    cont += 1
+    idade = int(input('digite a idade cadastrada:'))
+    if idade <= 12 :
+        criança.append(idade)
+    elif idade <= 17:
+        jovem.append(idade)
+    elif idade <= 59 :
+        adulto.append(idade)
+    else:
+        idoso.append(idade)
+
+todas_idades = criança + jovem + adulto + idoso
+media = sum(todas_idades) / len(todas_idades)
+
+print('\n\n\t --- Cadastro de Idades com Análise --- \n ')
+print(f'CRIANÇA : {criança} ')
+print(f'QUANTIDADE : {len(criança)}')
+print('\n')
+print(f'ADOLESCENTE : {jovem}')
+print(f'QUANTIDADE : {len(jovem)}')
+print('\n')
+print(f'ADULTO : {adulto}  ')
+print(f'QUANTIDADE : {len(adulto)}')
+print('\n')
+print(f'IDOSO : {idoso} ')
+print(f'QUANTIDADE : {len(idoso)}')
+print('\n')
+print(f'MÉDIA GERAL DAS IDADES: {media:.1f}')
