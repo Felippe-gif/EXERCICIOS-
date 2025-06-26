@@ -1,0 +1,50 @@
+ENUNCIADO :
+🎯 Objetivo:
+Crie um programa que:
+Peça ao usuário a quantidade de dias a serem registrados.
+Para cada dia:
+Peça a temperatura do dia, validando para que esteja entre -30 e 50 graus.
+Armazene todas as temperaturas em um vetor (lista).
+Use funções para:
+Calcular a média das temperaturas.
+Contar quantos dias foram acima de 30 graus, entre 15 e 30, e abaixo de 15.
+Exiba:
+A lista das temperaturas digitadas;
+A média geral;
+Quantos dias foram quentes, amenos e frios
+
+def temperaturas(listas):
+    quentes = 0
+    amenos = 0
+    frio = 0
+    media = sum(listas) / len(listas) 
+    for lista in listas:
+        if lista >= 30:
+            quentes += 1
+        elif lista >= 15:
+            amenos += 1
+        else:
+            frio +=1
+    print(f'Temperaturas registradas: {listas}')
+    print(f'Média das temperaturas: :{media}°C')
+
+    print(f'Dias quentes (acima de 30°C): {quentes}')
+    print(f'Dias amenos (entre 15°C e 30°C){amenos}')
+    print(f' Dias frios (abaixo de 15°C):{frio}')
+
+
+cont= 0
+Temperaturas = []
+num_dias = int(input('QUANTIDADE DE DIAS SEREM REGISTRADOS:'))
+while cont < num_dias:
+    tempo = int(input('digite a temperatura:'))
+    if tempo <= -30 or tempo >= 50:
+        print('TA ERRADO, DIGITE DE NOVO')
+        tempo = int(input('digite a temperatura:'))
+        Temperaturas.append(tempo)
+        cont += 1
+    else:
+        Temperaturas.append(tempo)
+        cont += 1
+        continue
+temperaturas(Temperaturas)
